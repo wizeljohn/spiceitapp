@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html>
+   <head>
+      <meta name="viewport" content="initial-scale=1,maximum-scale=1,user-scalable=no,width=device-width"  >
+<meta http-equiv="content-type" content="text/html; charset=UTF-8"/>
+
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="css/bootstrap.css" media="screen">
+	<link rel="stylesheet" href="css/font-awesome.css">
+	<script src="js/jquery-1.11.0.min.js"></script>
+	<script src="js/recipe.js"></script>
+	<script src="js/jsfile.js"></script>
+	<script>
+		$(document).ready(function(){
+
+		});
+	</script>
+
+   </head>
+   <body>
+<div class="navbar navbar-static-top" style="background: #FC7373;color:#efefef;">
+	<div class="container-fluid menu-top">
+		<div class="row">
+			<a href="index.html" class="col-xs-2"><i class="fa fa-home fa-2x" style="margin-top: 10px;"></i></a>
+			<div class="col-xs-8"></div>
+			<a href="addrecipe.html" class="col-xs-2"><i class="fa fa-plus fa-2x" style="margin-top: 10px;"></i></a>
+		</div>
+	</div>
+</div>
+
+
+<!--CONTENT-->
+<div class="container">
+	<center><h1 id='change'>My Recipe</h1></center>
+</div>
+
+<div id="output2" style="width: 100%; height:auto;"></div><br><br><br><br><br>
+<div id="output" style="width: 100%; height:auto;">
+
+
+</div>
+
+
+<!-- Modal -->
+<div id="myModalMyRecipe" class="modal fade" role="dialog" style="margin-left: -15px;">
+  <div class="modal-dialog" style="width: 100%;">
+
+    <!-- Modal content-->
+    <div class="modal-content">
+      <div class="modal-header">
+	      <div class="row">
+	        <button type="button" class="close" data-dismiss="modal" style="margin-right: 20px; "><i class="fa fa-times fa-2x"></i></button>
+	        <center><h3 id="viewrecipename"></h3></center>
+	        
+	  	  </div>
+      </div>
+      <div class="modal-body">
+		<div class="row">
+	        <img class='img-thumbnail' style='width: 100%; height: auto;' id="viewrecipepic" src='' />
+	        <!--<h4 class="col-xs-4">Rating: <h4 id="viewreciperating" class="col-xs-2"></h4></h4>-->
+	    </div>
+			<h4>Ingredients:</h4>
+	        <ul id="viewrecipeing" class="row">	
+	        </ul>
+	        <form id='frmInput'>
+		        <input type='hidden' id='txtrecipename' name ='txtrecipename'>
+		        <input type='hidden' id='txtrecipepic' name ='txtrecipepic'>
+		        <input type='hidden' id='txtreciperating' name ='txtreciperating'>
+		        <input type='hidden' id='txtrecipeing' name ='txtrecipeing'>
+			</form>
+      </div>
+
+      <div class="modal-footer">
+        <center><a class="btn btn-primary" onclick="">Post to Forum</a>
+        
+      </div>
+    </div>
+
+  </div>
+</div>
+<!--START FOOTER-->
+   		<div id="footer" class="navbar navbar-fixed-bottom" style="background: #FC7373;color:#efefef;">
+			<div class="container-fluid menu-bottom ">
+                 <div class="row">
+                 <center>  
+                  <a href="shoppinglist.html" class="col-xs-3"><i class="fa fa-shopping-cart fa-2x" style="margin-top:10px;"></i></a>
+				  <a href="search.html" class="col-xs-3 tab-btn">
+				  <i class="fa fa-search fa-2x" style="margin-top:10px;"></i>
+				  </a>
+				 
+                    <a href="myrecipe.html" class="col-xs-3  tab-btn">
+				  <i class="fa fa-book fa-2x" style="margin-top:10px;"></i>
+				  </a>
+				  <a class="col-xs-3  tab-btn">
+				  <i class="fa fa-cog fa-2x" style="margin-top:10px;"></i>
+				  </a>
+				</div>
+				</center>
+				</div>
+			</div>
+		</div>
+       </div>
+<!--END FOOTER-->
+
+	<script src="js/bootstrap.js"></script>
+	<script src="js/jsfile.js"></script>
+<script>
+LoadRecipe();
+LoadMyRecipe();
+
+</script>
+   </body>
+</html>

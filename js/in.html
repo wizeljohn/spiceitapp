@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	
+
+
+
+
+
+
+
+<script>
+	
+
+var a = ['dee', 'mid', 'initialize'];
+localStorage.removeItem('names');
+var names = JSON.parse(localStorage.getItem('names')) || a;
+
+// names.push({
+// 	fn: 'bret',
+// 	ln: 'axl'
+// })
+
+function Persist(){
+	localStorage.setItem('names', JSON.stringify(names));
+}
+
+Persist();
+
+console.log(names);
+</script>
+
+</body>
+</html>
