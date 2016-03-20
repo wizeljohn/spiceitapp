@@ -15,13 +15,13 @@
 	<preference name="android-minSdkVersion" value="14" />
 	<icon src="images/download.jpg" />
 	
-<icon src="images/download.jpg" gap:platform="android" gap:qualifier="ldpi" />
+<icon src="images/download.png" gap:platform="android" gap:qualifier="ldpi" />
 	
-<icon src="images/download.jpg" gap:platform="android" gap:qualifier="mdpi" />
+<icon src="images/download.png" gap:platform="android" gap:qualifier="mdpi" />
 	
-<icon src="image/download.jpg" gap:platform="android" gap:qualifier="hdpi" />
+<icon src="images/download.png" gap:platform="android" gap:qualifier="hdpi" />
 	
-<icon src="image/download.jpg" gap:platform="android" gap:qualifier="xhdpi" />
+<icon src="images/download.png" gap:platform="android" gap:qualifier="xhdpi" />
 
 	<feature name="http://api.phonegap.com/1.0/network"/>
 	<feature name="http://api.phonegap.com/1.0/camera"/>
