@@ -37,8 +37,8 @@
 	<gap:plugin name="org.apache.cordova.media-capture" />
 	<gap:plugin name="org.apache.cordova.splashscreen" />
 	<gap:plugin name="com.phonegap.plugins.facebookconnect" version="0.9.0">
-        <param name="APP_ID" value="409020855966740" />
-        <param name="APP_NAME" value="e-RoadManage" />
+        <param name="APP_ID" value="1060631274001661" />
+        <param name="APP_NAME" value="SpiceEatApp" />
    </gap:plugin>
 	
 <preference name="SplashScreen" value="image/splash.png" /> <!-- defaults to "img/logo.png" -->
