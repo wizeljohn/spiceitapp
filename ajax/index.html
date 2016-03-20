@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Document</title>
+  
+  <script src="jquery.js"></script>
+  <script src="jquery-ajax.js"></script>
+</head>
+<body>
+  
+	<input type="file" id="file1">
+	<button onclick="uploadFile()">Upload</button>
+	
+	<progress value="0" max="100" id="progress"></progress>
+<script>
+
+function uploadFile(){
+	var file = document.getElementById('file1').files[0];
+	var progress = document.getElementById('progress');
+	
+	var formdata = new FormData();
+	
+	formdata.append('file1', file);
+	
+	$.ajax({
+		url: 'fileupload.php',
+		type: 'POST',
+		data: formdata,	
+		processData: false,
+		contentType: false,
+		success: function(data){
+			console.log(data);
+		},
+		error: function(xhr, status, error){
+			console.log(error);
+		}
+	}).uploadProgress(function(e) {
+    // tracking uploading
+     if (e.lengthComputable) {
+      var percentage = Math.round((e.loaded * 100) / e.total);
+      console.log(percentage);
+			progress.value = percentage;
+    }
+  });
+}
+
+</script> 
+
+</body>
+</html>

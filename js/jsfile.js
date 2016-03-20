@@ -1,4 +1,4 @@
-function ShowRecipe() {
+ function ShowRecipe() {
 	var output = "";
 
 	for(var i=0; i <= menu.matches.length-1; i++){
@@ -23,25 +23,29 @@ function ViewRecipe(index){
 		document.getElementById('viewrecipeing').innerHTML += "<li>" + menu.matches[index].ingredients[i] + "</li>";
 		ingredientsArray.push(menu.matches[index].ingredients[i]);
 	}
-
+	console.log(ingredientsArray);
   
 }
-
+var myRecipeIngredientsArray = [];
 function ViewMyRecipe(index){
-	document.getElementById('txtrecipename').value = recipeArray[index].recipe;
-	document.getElementById('txtreciperating').value = recipeArray[index].rating;
-	document.getElementById('txtrecipepic').value = recipeArray[index].pic;
+	
 	document.getElementById('viewrecipename').innerText = recipeArray[index].recipe;
 	//document.getElementById('viewreciperating').innerText = menu.matches[index].rating;
 	document.getElementById('viewrecipepic').src = recipeArray[index].pic;
-	document.getElementById('txtrecipeing').value = index;
+	document.getElementById('txtrecipenum').value = index;
+	document.getElementById('txtrecipename').value = recipeArray[index].recipe;
+	document.getElementById('txtreciperating').value = recipeArray[index].rating;
+	document.getElementById('txtrecipepic').value = recipeArray[index].pic;
+	document.getElementById('txtrecipeing').value = recipeArray[index].ingredients;
 
 
-	for(var i= recipeArray[index].ingredients.length-1; i>= 0; i--){
+	for(var i=0 ; i<= recipeArray[index].ingredients.length-1; i++){
 		document.getElementById('viewrecipeing').innerHTML += "<li>" + recipeArray[index].ingredients[i] + "</li>";
-		ingredientsArray.push(recipeArray[index].ingredients[i]);
-	}
+		myRecipeIngredientsArray.push(recipeArray[index].ingredients[i]);
 
+	}
+	console.log(myRecipeIngredientsArray);
+	document.getElementById('myBtn').innerHTML = "<button class='btn btn-primary' data-toggle='modal' data-target='#myModalForum' onclick='ViewForForums("+index+")'> Post to Forum</button>";
   
 }
 
@@ -344,7 +348,8 @@ function AddMyRecipe(){
 	
 	var myRecipeObject = {
     myRecipe : myRecipeName,
-    myIngredients: addMyRecipeIngredientsArray
+    myIngredients: addMyRecipeIngredientsArray,
+    myPhoto: localStorage.getItem('addpic')
   };
 
   myRecipeArray.push(myRecipeObject);
@@ -357,8 +362,28 @@ function LoadMyRecipe(){
 	var output = "";
 
 	for(var i= myRecipeArray.length-1;i>=0; i--){
-		output += "<div style='position: absolute; margin-top: 40px; margin-left: 20px;'><p style=' font-size: 30px; font-family: fantasy'>"+myRecipeArray[i].myRecipe+"</p></div><br>";
+		output += "<div style='position: absolute; margin-top: 40px; margin-left: 20px;'><p style='color: white; font-size: 30px; font-family: fantasy'>"+myRecipeArray[i].myRecipe+"</p></div><img class='img-thumbnail' style='width: 100%; height:100%; float: absolute' src='"+myRecipeArray[i].myPhoto+"' /></div></a><br>";
 
 	}
 	document.getElementById('output2').innerHTML = output;
 }
+
+
+var ingForumArray = [];
+function ViewForForums(index){
+
+	document.getElementById('viewNameForum').innerText = recipeArray[index].recipe;
+	//document.getElementById('viewreciperating').innerText = menu.matches[index].rating;
+	document.getElementById('viewImgForum').src = recipeArray[index].pic;
+	document.getElementById('txtNameForum').value = recipeArray[index].recipe;
+	document.getElementById('txtImgForum').value = recipeArray[index].pic;
+	document.getElementById('txtIngForum').value = recipeArray[index].ingredients;
+	
+
+	
+	for(var i= recipeArray[index].ingredients.length-1; i>= 0; i--){
+		document.getElementById('viewIngForum').innerHTML += "<li>" + recipeArray[index].ingredients[i] + "</li>";
+		ingForumArray.push(recipeArray[index].ingredients[i]);
+	}
+}
+

@@ -1,9 +1,8 @@
 <!DOCTYPE html>
 <html>
    <head>
-      <title>Home</title>
       <meta name="viewport" content="initial-scale=1,maximum-scale=1,user-scalable=no,width=device-width"  >
-		<meta http-equiv="content-type" content="text/html; charset=UTF-8"/>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8"/>
 
     <meta charset="utf-8">
     <link rel="stylesheet" href="css/bootstrap.css" media="screen">
@@ -12,85 +11,46 @@
 	<script src="js/recipe.js"></script>
 	<script src="js/jsfile.js"></script>
 
-
+	<script>
+		$(document).ready(function(){
+			
+		});
+	</script>
    </head>
    <body>
-<div class="navbar navbar-static-top" style="background: #FC7373;color:#efefef;">
-	<div class="container-fluid menu-top">
-		<div class="row">
-			<a href="index.html" class=""><i class="fa fa-home fa-2x" style="margin-top: 10px;margin-left: 10px;"></i></a>
-		</div>
-	</div>
+
+<!--CONTENT-->
+<div class="container"  style="background: red; border-radius: 10px; width: 100%; height: 60px;margin-top: 60px;"><center><img src="images/spiceeatapp.png" height="50" width="70%"></center></div>
+
+<div class="container">
+    <a class="btn btn-primary btn-lg" id='btnLogin' style="width: 100%;margin-top: 20px;"><i class="fa fa-facebook "></i> Login</a>
 </div>
-<center><h2>Menu</h2></center>
-<div style="position: absolute; margin-top: 40px; margin-left: 20px; width:100%; height: 100%" ><p style="color: white; font-size: 30px; font-family: fantasy">Chicken Inasal</p></div><img class='img-thumbnail' style='width: 100%; height:100%; float: absolute' src='images/samplerecipe.jpg' /><br>
-<div id="output" style="width: 100%; height:auto"></div>
-
-<!--START FOOTER-->
-   		<div id="footer" class="navbar navbar-fixed-bottom" style="background: #FC7373;color:#efefef;">
-			<div class="container menu-bottom ">
-                 <div class="row">
-                 <center>  
-                  <a href="shoppinglist.html" ><i class="fa fa-shopping-cart fa-2x" class="col-xs-3" style="margin-top:10px;"></i></a>
-				  <a href="forums.html" class=" tab-btn">
-				  <i class="fa fa-users fa-2x col-xs-3" style="margin-top:10px;"></i>
-				  </a>
-				 
-                  <a href="myrecipe.html" class=" tab-btn">
-				  <i class="fa fa-book fa-2x col-xs-3 " style="margin-top:10px;"></i>
-				  </a>
-				  <a class="tab-btn">
-				  <i class="fa fa-cog fa-2x col-xs-3 " style="margin-top:10px;"></i>
-				  </a>
-				</div>
-				</center>
-				</div>
-			</div>
-		</div>
-       </div>
-<!--END FOOTER-->
-
-<!-- Modal -->
-<div id="myModalRecipe" class="modal fade" role="dialog">
-  <div class="modal-dialog">
-
-    <!-- Modal content-->
-    <div class="modal-content">
-      <div class="modal-header">
-	      <div class="row">
-	        <button type="button" class="close" data-dismiss="modal" style="margin-right: 20px; "><i class="fa fa-times fa-2x"></i></button>
-	        <center><h3 id="viewrecipename"></h3></center>
-	        
-	  	  </div>
-      </div>
-      <div class="modal-body">
-		<div class="row">
-	        <img class='img-thumbnail' style='width: 100%; height: auto;' id="viewrecipepic" src='' />
-	        <!--<h4 class="col-xs-4">Rating: <h4 id="viewreciperating" class="col-xs-2"></h4></h4>-->
-	    </div>
-			<h4>Ingredients:</h4>
-	        <ul id="viewrecipeing">	
-	        </ul>
-	        <input type='hidden' id='txtrecipenumber'>
-	        <input type='hidden' id='txtrecipename'>
-	        <input type='hidden' id='txtrecipepic'>
-	        <input type='hidden' id='txtreciperating'>
-	        <input type='hidden' id='txtrecipeing'>
-
-      </div>
-
-      <div class="modal-footer">
-        <center><a class="btn btn-primary" onclick="SaveRecipe()"><i class="fa fa-plus fa-3x"></i></a>
-        <a class="btn btn-primary" onclick="AddShoppingRecipe()"><i class="fa fa-shopping-cart fa-3x"></i></a></center>
-      </div>
-    </div>
-
-  </div>
-</div>
+<script src="cordova.js"></script>
+<script src="js/openfb.js"></script>
 <script>
-	ShowRecipe();
+openFB.init({appId: '1060631274001661'});
+$("#btnLogin").click(function(){
+openFB.login(
+                function(response) {
+                    if(response.status === 'connected') {
+                        localStorage.setItem('logged', 'true');
+                        location.href="menu.html";
+                        
+                    } else {
+                        alert('Facebook login failed: ' + response.error);
+                    }
+                }, {scope: 'email'});
+}); 
+
+    function errorHandler(error) {
+        alert(error.message);
+    }
+
+if(localStorage.getItem('logged')){
+  location.href="menu.html";
+}
 </script>
 	<script src="js/bootstrap.js"></script>
-	<script src="js/jsfile.js"></script>
+
    </body>
 </html>

@@ -17,6 +17,7 @@
 		    // Take picture using device camera and retrieve image as base64-encoded string
 		    navigator.camera.getPicture(onPhotoDataSuccess, onFail, { quality: 50, destinationType: Camera.DestinationType.FILE_URI });
 		}
+    var image_uri;
 function onPhotoDataSuccess(imageURI) { 
         // Uncomment to view the base64 encoded image data
         // console.log(imageData);
@@ -32,6 +33,7 @@ function onPhotoDataSuccess(imageURI) {
         imgProfile.src = imageURI;
         if(sessionStorage.isprofileimage==1){
             getLocation();
+            localStorage.setItem('addpic', imageURI);
         }
         movePic(imageURI);
         alert("Your photo has been saved to your phone storage.");
@@ -85,7 +87,7 @@ function resOnError(error) {
 <div class="navbar navbar-static-top" style="background: #FC7373;color:#efefef;">
 	<div class="container-fluid menu-top">
 		<div class="row">
-			<a href="index.html" class="col-xs-2"><i class="fa fa-home fa-2x" style="margin-top: 10px;"></i></a>
+			<a href="menu.html" class="col-xs-2"><i class="fa fa-home fa-2x" style="margin-top: 10px;"></i></a>
 		</div>
 	</div>
 </div>

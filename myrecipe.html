@@ -12,17 +12,16 @@
 	<script src="js/jsfile.js"></script>
 	<script>
 		$(document).ready(function(){
-
 		});
 	</script>
 
    </head>
    <body>
-<div class="navbar navbar-static-top" style="background: #FC7373;color:#efefef;">
+<div class="navbar navbar-static-top" style="background: #F51111;color:#efefef;">
 	<div class="container-fluid menu-top">
 		<div class="row">
-			<a href="index.html" class="col-xs-2"><i class="fa fa-home fa-2x" style="margin-top: 10px;"></i></a>
-			<div class="col-xs-8"></div>
+			<img src="images/spiceeatapp.png" width="100%" height="50" class="col-xs-6">
+			<div class="col-xs-4"></div>
 			<a href="addrecipe.html" class="col-xs-2"><i class="fa fa-plus fa-2x" style="margin-top: 10px;"></i></a>
 		</div>
 	</div>
@@ -42,14 +41,14 @@
 
 
 <!-- Modal -->
-<div id="myModalMyRecipe" class="modal fade" role="dialog" style="margin-left: -15px;">
-  <div class="modal-dialog" style="width: 100%;">
+<div id="myModalMyRecipe" class="modal fade" role="dialog">
+  <div class="modal-dialog">
 
     <!-- Modal content-->
     <div class="modal-content">
       <div class="modal-header">
 	      <div class="row">
-	        <button type="button" class="close" data-dismiss="modal" style="margin-right: 20px; "><i class="fa fa-times fa-2x"></i></button>
+	        <button type="button" class="close" data-dismiss="modal" onclick="location.href='myrecipe.html'" style="margin-right: 20px; "><i class="fa fa-times fa-2x"></i></button>
 	        <center><h3 id="viewrecipename"></h3></center>
 	        
 	  	  </div>
@@ -67,39 +66,54 @@
 		        <input type='hidden' id='txtrecipepic' name ='txtrecipepic'>
 		        <input type='hidden' id='txtreciperating' name ='txtreciperating'>
 		        <input type='hidden' id='txtrecipeing' name ='txtrecipeing'>
+		        <input type='hidden' id='txtrecipenum' name ='txtrecipenum'>
 			</form>
+			<div id="myBtn"></div>
       </div>
 
       <div class="modal-footer">
-        <center><a class="btn btn-primary" onclick="">Post to Forum</a>
-        
+       	
       </div>
     </div>
 
   </div>
 </div>
+
+
+
 <!--START FOOTER-->
-   		<div id="footer" class="navbar navbar-fixed-bottom" style="background: #FC7373;color:#efefef;">
-			<div class="container-fluid menu-bottom ">
+   		<div id="footer" class="navbar navbar-fixed-bottom" style="background: #F51111;color:#efefef;">
+			<div class="container menu-bottom ">
                  <div class="row">
-                 <center>  
-                  <a href="shoppinglist.html" class="col-xs-3"><i class="fa fa-shopping-cart fa-2x" style="margin-top:10px;"></i></a>
-				  <a href="search.html" class="col-xs-3 tab-btn">
-				  <i class="fa fa-search fa-2x" style="margin-top:10px;"></i>
+                  <center>
+                 <a href="menu.html" class="tab-btn">
+                 <i class="fa fa-list-alt fa-2x col-xs-3" style="margin-top: 10px;"></i>
+                 </a>
+         
+				  <a href="forums.html" class=" tab-btn">
+				  <i class="fa fa-users fa-2x col-xs-3" style="margin-top:10px;"></i>
 				  </a>
 				 
-                    <a href="myrecipe.html" class="col-xs-3  tab-btn">
-				  <i class="fa fa-book fa-2x" style="margin-top:10px;"></i>
+                  <a href="myrecipe.html" class=" tab-btn">
+				  <i class="fa fa-book fa-2x col-xs-3" style="margin-top:10px;"></i>
 				  </a>
-				  <a class="col-xs-3  tab-btn">
-				  <i class="fa fa-cog fa-2x" style="margin-top:10px;"></i>
-				  </a>
+
+				   <a href="shoppinglist.html" class="tab-btn">
+                  <i class="fa fa-shopping-cart fa-2x col-xs-3" class="" style="margin-top:10px;"></i>
+                  </a>
+                  </center>
 				</div>
-				</center>
+				<div class="row">
+				<center>
+					<small class="col-xs-3">Menu</small>
+					<small class="col-xs-3">Forum</small>
+					<small class="col-xs-3">My Recipe</small>
+					<small class="col-xs-3">My Shopping List</small>
+					</center>
+				</div>
+				
 				</div>
 			</div>
-		</div>
-       </div>
 <!--END FOOTER-->
 
 	<script src="js/bootstrap.js"></script>

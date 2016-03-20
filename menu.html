@@ -1,8 +1,9 @@
 <!DOCTYPE html>
 <html>
    <head>
+      <title>Home</title>
       <meta name="viewport" content="initial-scale=1,maximum-scale=1,user-scalable=no,width=device-width"  >
-<meta http-equiv="content-type" content="text/html; charset=UTF-8"/>
+		<meta http-equiv="content-type" content="text/html; charset=UTF-8"/>
 
     <meta charset="utf-8">
     <link rel="stylesheet" href="css/bootstrap.css" media="screen">
@@ -21,37 +22,10 @@
 		</div>
 	</div>
 </div>
+<center><h2>Menu</h2></center>
 
-<!--CONTENT-->
+<div id="output" style="width: 100%; height:auto"></div>
 
-	<h3 class="col-xs-10" id='shoppingTitle'>Shopping List</h3>
-
-	<a id='btndoneshopping' onclick ='location.href="archives.html"'><i class="fa fa-folder-o fa-2x col-xs-2"  style="margin-top: 20px;margin-left: -20px;"></i></a>
-		
-	    <center>
-	      <input id='txtItem' type="text"  placeholder="Add item.." style="height: 43px;">
-	      
-	        <button id='btnAddItem' onclick="AddShoppingItem()" class="btn btn-default" type="button"><i class="fa fa-plus fa-2x"></i></button>
-	</center>
-<div id="divAdditionalItem">
-	
-		<a data-toggle='collapse' data-target='#demo' onclick='LoadShoppingItem()'>
-			<div style='width:100%; height:80px;border: solid 2px'>
-				<img src='images/download.jpg' class='col-xs-2' style='width:120px;height:75px;'>
-				<h4 class='col-xs-4'>Additional Items</h4>
-		</a>
-			<div style='margin-top:20px;'>
-				<i class="fa fa-basket col-xs-2"></i>
-				<a onclick='DoneShoppingItems()'><i class='fa fa-check-square fa-2x '></i></a>
-			</div>
-			</div>
-	</div>
-	<div id='demo' class='collapse'>
-		<ul id='listadditionalitems'></ul>
-	</div>
-</div>
-<div id="output"></div>
-<br><br>
 <!--START FOOTER-->
    		<div id="footer" class="navbar navbar-fixed-bottom" style="background: #F51111;color:#efefef;">
 			<div class="container menu-bottom ">
@@ -86,12 +60,48 @@
 				</div>
 			</div>
 <!--END FOOTER-->
-<script>
-	LoadShoppingRecipe();
 
+<!-- Modal -->
+<div id="myModalRecipe" class="modal fade" role="dialog">
+  <div class="modal-dialog">
+
+    <!-- Modal content-->
+    <div class="modal-content">
+      <div class="modal-header">
+	      <div class="row">
+	        <button type="button" class="close" onclick="location.href='menu.html'" data-dismiss="modal" style="margin-right: 20px;"><i class="fa fa-times fa-2x"></i></button>
+	        <center><h3 id="viewrecipename"></h3></center>
+	        
+	  	  </div>
+      </div>
+      <div class="modal-body">
+		<div class="row">
+	        <img class='img-thumbnail' style='width: 100%; height: auto;' id="viewrecipepic" src='' />
+	        <!--<h4 class="col-xs-4">Rating: <h4 id="viewreciperating" class="col-xs-2"></h4></h4>-->
+	    </div>
+			<h4>Ingredients:</h4>
+	        <ul id="viewrecipeing">	
+	        </ul>
+	        <input type='hidden' id='txtrecipenumber'>
+	        <input type='hidden' id='txtrecipename'>
+	        <input type='hidden' id='txtrecipepic'>
+	        <input type='hidden' id='txtreciperating'>
+	        <input type='hidden' id='txtrecipeing'>
+
+      </div>
+
+      <div class="modal-footer">
+        <center><a class="btn btn-primary" onclick="SaveRecipe()"><i class="fa fa-plus fa-3x"></i></a>
+        <a class="btn btn-primary" onclick="AddShoppingRecipe()"><i class="fa fa-shopping-cart fa-3x"></i></a></center>
+      </div>
+    </div>
+
+  </div>
+</div>
+<script>
+	ShowRecipe();
 </script>
 	<script src="js/bootstrap.js"></script>
-		<script src="js/jsfile.js"></script>
-
+	<script src="js/jsfile.js"></script>
    </body>
 </html>
